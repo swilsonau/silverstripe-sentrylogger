@@ -1,0 +1,19 @@
+{
+  "name": "swilsonalfa/sentrylogger",
+  "description": "Publish SilverStripe errors and warnings to Sentry using the Raven client.",
+  "type": "silverstripe-module",
+  "license": "MIT",
+  "keywords": ["silverstripe", "error", "log", "logging", "sentry", "raven"],
+  "authors": [
+    {
+      "name": "Stewart Wilson",
+      "email": "stewart@stewartw.net"
+    }
+  ],
+  "require" : {
+    "silverstripe/framework": "~3.1"
+  },
+  "extra" : {
+    "installer-name": "sentrylogger"
+  }
+}
