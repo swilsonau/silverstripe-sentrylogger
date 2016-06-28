@@ -1,5 +1,5 @@
 # SilverStripe Sentry Logger
-![helpfulrobot](https://helpfulrobot.io/swilsonalfa/sentrylogger/badge)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/swilsonalfa/silverstripe-sentrylogger/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/swilsonalfa/silverstripe-sentrylogger/?branch=master) ![helpfulrobot](https://helpfulrobot.io/swilsonalfa/sentrylogger/badge)
 
 Publish SilverStripe errors and warnings to Sentry using the Raven client.
 
