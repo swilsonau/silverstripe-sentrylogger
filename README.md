@@ -1,4 +1,4 @@
-# SilverStirpe Sentry Logger
+# SilverStripe Sentry Logger
 ![helpfulrobot](https://helpfulrobot.io/swilsonalfa/sentrylogger/badge)
 
 Publish SilverStripe errors and warnings to Sentry using the Raven client.
