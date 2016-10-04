@@ -33,15 +33,16 @@ class SentryLogger extends Zend_Log_Writer_Abstract {
     }
 
     /**
-     * Send the error
-     */
+     * Send the error.
+     * 
+     * @param array $event
+     * @return void
+    */
     public function _write($event) {
         $data['level'] = $this->logLevels[$event['priorityName']];
-        $data['timestamp'] = $event['timestamp'];
-
+        $data['timestamp'] = strtotime($event['timestamp']);
         $backtrace = SS_Backtrace::filter_backtrace(debug_backtrace(), array("SentryLogger->_write"));
-
-        $eventID = $this->sentry->captureMessage($event['message']['errstr'], array(), $data, $backtrace);
+        $this->sentry->captureMessage($event['message']['errstr'], array(), $data, $backtrace);
     }
 
 }
