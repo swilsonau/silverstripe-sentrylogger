@@ -30,6 +30,13 @@ class SentryLogger extends Zend_Log_Writer_Abstract {
         $DSN = Config::inst()->get('SentryLogger', 'sentry_dsn');
         $this->sentry = new Raven_Client($DSN);
         $this->sentry->setEnvironment(Director::get_environment_type());
+        
+        if(Member::currentUserID()) {
+            $this->sentry->user_context(array(
+                'email' => Member::curentUser()->Email,
+                'id' => Member::currentUserID()
+            ));    
+        }
     }
 
     /**
