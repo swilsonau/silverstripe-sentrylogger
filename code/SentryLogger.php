@@ -33,7 +33,7 @@ class SentryLogger extends Zend_Log_Writer_Abstract {
         
         if(Member::currentUserID()) {
             $this->sentry->user_context(array(
-                'email' => Member::curentUser()->Email,
+                'email' => Member::currentUser()->Email,
                 'id' => Member::currentUserID()
             ));    
         }
