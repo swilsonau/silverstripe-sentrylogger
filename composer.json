@@ -1,5 +1,5 @@
 {
-  "name": "swilsonalfa/sentrylogger",
+  "name": "swilsonau/sentrylogger",
   "description": "Publish SilverStripe errors and warnings to Sentry using the Raven client.",
   "type": "silverstripe-module",
   "license": "MIT",
