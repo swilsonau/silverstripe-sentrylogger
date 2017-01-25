@@ -7,6 +7,11 @@ require_once 'Zend/Log/Writer/Abstract.php';
  */
 class SentryLogger extends Zend_Log_Writer_Abstract {
 
+    /**
+     * @var string
+     */
+    private static $default_error_level = 'NOTICE';
+    
     private $sentry;
 
     private $logLevels = array(
@@ -46,7 +51,9 @@ class SentryLogger extends Zend_Log_Writer_Abstract {
      * @return void
     */
     public function _write($event) {
-        $data['level'] = $this->logLevels[$event['priorityName']];
+        $data['level'] = isset($this->logLevels[$event['priorityName']]) ?
+            $this->logLevels[$event['priorityName']] : 
+            $this->logLevels[self::$default_error_level];
         $data['timestamp'] = strtotime($event['timestamp']);
         $backtrace = SS_Backtrace::filter_backtrace(debug_backtrace(), array("SentryLogger->_write"));
         $this->sentry->captureMessage($event['message']['errstr'], array(), $data, $backtrace);
